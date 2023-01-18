@@ -1,7 +1,11 @@
 <div class="concept-details">
-  <p>Pour associer un click et un space à un même évènement, j'utilise la directive appClickAndSpace que tu peux retrouver dans le module shared/directives.
+  <p>Très difficile d'intégrer le besoin exprimé avec angular material. Cela relève plus de la bricole que d'un comportement générique et que tu peux mettre en place une et une seule fois.
   </p>
-  <p>Cette directive va écouter les 2 évènements pour y associer le même appel de fonction. Dans le cas du space, elle va aussi arrêter la propagation pour éviter le srolling</p>
+  <p>Pour réussir à récupérer le focus sur les suivants / précédents, il faut forcer les mat tab à réinstancier leur contenu au chargement. Pour ce faire
+    il faut mettre un ng-template de premier niveau dans les mat-tab associé à la directive matTabContent. Sur le premier champs de chaque mat-tab, il faut apposer la directive appSetFocus
+    qui permet de mettre le focus sur ce champs lors de son chargement.
+  </p>
+  <p>Je creuse encore pour trouver mieux...</p>
 </div>
 <div class="concept-example">
     <mat-tab-group id="mat-tab-group" [(selectedIndex)]="selectedTab">
