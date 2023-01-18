@@ -1,0 +1,52 @@
+<div class="concept-details">
+  <p>Pour associer un click et un space à un même évènement, j'utilise la directive appClickAndSpace que tu peux retrouver dans le module shared/directives.
+  </p>
+  <p>Cette directive va écouter les 2 évènements pour y associer le même appel de fonction. Dans le cas du space, elle va aussi arrêter la propagation pour éviter le srolling</p>
+</div>
+<div class="concept-example">
+    <mat-tab-group id="mat-tab-group" [(selectedIndex)]="selectedTab">
+      <mat-tab label="Identité">
+        <ng-template matTabContent>
+          <div>
+            <label for="">Champs 1</label>
+            <input type="text" appSetFocus>
+          </div>
+          <div>
+            <label for="">Champs 2</label>
+            <input type="text">
+          </div>
+          <div>
+            <label for="">Champs 3</label>
+            <input type="text">
+          </div>
+          <div>
+            <label for="">Champs 4</label>
+            <input type="text">
+          </div>
+          <button (click)="setTab(1)">Suivant</button>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Adresse" >
+        <ng-template matTabContent>
+          <div>
+            <label for="">Champs 1</label>
+            <input type="text" appSetFocus>
+          </div>
+          <div>
+            <label for="">Champs 2</label>
+            <input type="text">
+          </div>
+          <div>
+            <label for="">Champs 3</label>
+            <input type="text">
+          </div>
+          <div>
+            <label for="">Champs 4</label>
+            <input type="text">
+          </div>
+          <button (click)="setTab(0)">Précédent</button>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+</div>
+

@@ -1,0 +1,55 @@
+@import "vars";
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: $font-main;
+}
+
+body {
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    table-layout: auto;
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+input, select {
+  border-style: solid;
+  border-radius: $radius-round;
+  border-color: $color-grey-dark;
+  padding: 2px 5px;
+  &:focus {
+    border-color: $color-primary-extra-light;
+    outline: none;
+  }
+}
+
+button {
+  background-color: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: auto;
+  &, th, td {
+    border: none;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+}
