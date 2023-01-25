@@ -18,6 +18,10 @@ export class MatTabFocusComponent implements OnInit {
 
   setTab(index: number): void {
     this.selectedTab = index;
+    const target = <HTMLElement>document.querySelector(`#mat-tab-label-0-${index}`);
+    if (target) {
+      target.focus();
+    }
   }
 
 }
