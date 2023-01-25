@@ -22,7 +22,8 @@ export class RedirectionLinkWidgetComponent implements OnInit {
   }
 
   navigateToAnchor(anchor: RedirectionLink): void {
-      this.router.navigate(['.'], { fragment: anchor.link }).then(() => {
+      this.router.navigate(['.'], { fragment: anchor.link, replaceUrl: true, skipLocationChange: false }).then(() => {
+        window.location.hash = anchor.link;
         const target = <HTMLElement>document.querySelector(`#${anchor.link}`);
         if (target) {
           target.focus();
