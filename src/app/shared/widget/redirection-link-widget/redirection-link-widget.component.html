@@ -1,4 +1,4 @@
 <h2>Liens de redirection</h2>
 <ul>
-  <li *ngFor="let anchor of anchors$ | async"><button (appClickAndSpace)="navigateToAnchor(anchor)">{{ anchor.label }}</button></li>
+  <li *ngFor="let anchor of anchors$ | async"><button (appClickAndKeyboard)="navigateToAnchor(anchor)">{{ anchor.label }}</button></li>
 </ul>

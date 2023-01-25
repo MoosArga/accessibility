@@ -1,17 +1,17 @@
 import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
-  selector: '[appClickAndSpace]'
+  selector: '[appClickAndKeyboard]'
 })
-export class ClickAndSpaceDirective {
+export class ClickAndKeyboardDirective {
 
-  @Output() appClickAndSpace: EventEmitter<void> = new EventEmitter<void>();
+  @Output() appClickAndKeyboard: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }
 
   @HostListener('click', ['$event'])
   onClick(event: Event):void {
-    this.appClickAndSpace.emit();
+    this.appClickAndKeyboard.emit();
   }
 
   @HostListener('keydown.space', ['$event'])
@@ -19,7 +19,7 @@ export class ClickAndSpaceDirective {
   onKeyDownSpaceOrEnter(event: Event):void {
     event.preventDefault();
     event.stopPropagation();
-    this.appClickAndSpace.emit();
+    this.appClickAndKeyboard.emit();
   }
 
 }

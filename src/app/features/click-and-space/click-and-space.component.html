@@ -1,8 +1,8 @@
 <div class="concept-details">
-  <p>Pour associer un click et un space à un même évènement, j'utilise la directive appClickAndSpace que tu peux retrouver dans le module shared/directives.
+  <p>Pour associer un click et un space ou un enter à un même évènement, j'utilise la directive appClickAndSpace que tu peux retrouver dans le module shared/directives.
   </p>
-  <p>Cette directive va écouter les 2 évènements pour y associer le même appel de fonction. Dans le cas du space, elle va aussi arrêter la propagation pour éviter le srolling</p>
+  <p>Cette directive va écouter les 2 évènements pour y associer le même appel de fonction. Dans le cas du space ou de enter, elle va aussi arrêter la propagation pour éviter le srolling</p>
 </div>
 <div class="concept-example">
-    <span (appClickAndSpace)="coucou()" autofocus tabindex="0">Clique ou appuies sur space quand j'ai le focus et je ferai coucou</span>
+    <span (appClickAndKeyboard)="coucou()" tabindex="0">Clique ou appuies sur space quand j'ai le focus et je ferai coucou</span>
 </div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClickAndSpaceDirective } from './directive/click-and-space.directive';
+import { ClickAndKeyboardDirective } from './directive/click-and-keyboard.directive';
 import { RedirectionAnchorDirective } from './directive/redirection-anchor.directive';
 import { RedirectionLinkWidgetComponent } from './widget/redirection-link-widget/redirection-link-widget.component';
 import { RouterModule } from '@angular/router';
@@ -10,7 +10,7 @@ import { SetFocusDirective } from './directive/set-focus.directive';
 
 @NgModule({
   declarations: [
-    ClickAndSpaceDirective,
+    ClickAndKeyboardDirective,
     RedirectionAnchorDirective,
     RedirectionLinkWidgetComponent,
     SetFocusDirective,
@@ -20,7 +20,7 @@ import { SetFocusDirective } from './directive/set-focus.directive';
     RouterModule
   ],
   exports: [
-    ClickAndSpaceDirective,
+    ClickAndKeyboardDirective,
     RedirectionAnchorDirective,
     RedirectionLinkWidgetComponent,
     SetFocusDirective,
