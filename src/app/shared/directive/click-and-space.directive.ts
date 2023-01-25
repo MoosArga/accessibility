@@ -15,7 +15,8 @@ export class ClickAndSpaceDirective {
   }
 
   @HostListener('keydown.space', ['$event'])
-  onKeyDownSpace(event: Event):void {
+  @HostListener('keydown.enter', ['$event'])
+  onKeyDownSpaceOrEnter(event: Event):void {
     event.preventDefault();
     event.stopPropagation();
     this.appClickAndSpace.emit();

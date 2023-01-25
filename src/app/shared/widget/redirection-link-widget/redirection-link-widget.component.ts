@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { RedirectionLink } from '../../model/redirection-link';
 import { RedirectionAnchorStore } from '../../store/redirection-anchor.store';
@@ -13,10 +14,20 @@ export class RedirectionLinkWidgetComponent implements OnInit {
 
   anchors$: Observable<RedirectionLink[]>
 
-  constructor(private redirectionAnchorStore: RedirectionAnchorStore) { }
+  constructor(private redirectionAnchorStore: RedirectionAnchorStore,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.anchors$ = this.redirectionAnchorStore.getAnchors$();
+  }
+
+  navigateToAnchor(anchor: RedirectionLink): void {
+      this.router.navigate(['.'], { fragment: anchor.link }).then(() => {
+        const target = <HTMLElement>document.querySelector(`#${anchor.link}`);
+        if (target) {
+          target.focus();
+        }
+      });
   }
 
 }

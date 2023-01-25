@@ -1,4 +1,4 @@
 <h2>Liens de redirection</h2>
 <ul>
-  <li *ngFor="let anchor of anchors$ | async"><a [routerLink]="'.'" [fragment]="anchor.link">{{ anchor.label }}</a></li>
+  <li *ngFor="let anchor of anchors$ | async"><a (click)="navigateToAnchor(anchor)">{{ anchor.label }}</a></li>
 </ul>
